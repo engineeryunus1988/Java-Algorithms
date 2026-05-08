@@ -1,0 +1,18 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+        // İğne, samanlıktan büyükse bulma şansımız yok
+        if (haystack.length() < needle.length()) {
+            return -1;
+        }
+
+        // Pencereyi samanlığın üzerinde kaydırıyoruz
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+            // Samanlığın içinden iğne boyunda bir parça kesip alıyoruz (substring)
+            if (haystack.substring(i, i + needle.length()).equals(needle)) {
+                return i; // Eşleşme bulduğumuz ilk indeksi döndür
+            }
+        }
+
+        return -1; // Hiç eşleşme olmazsa
+    }
+}
