@@ -1,0 +1,27 @@
+class Solution {
+    public int mySqrt(int x) {
+        if (x < 2) return x; // 0 ve 1 için d
+
+
+        long left = 2;
+        int right = x / 2; // Bir sayının kar
+
+
+        while (left <= right) {
+            long mid = left + (right - left) 
+            long num = mid * mid;
+
+
+            if (num > x) {
+                right = (int) mid - 1;
+            } else if (num < x) {
+                left = mid + 1;
+            } else {
+                return (int) mid; // Tam kare
+            }
+        }
+
+
+        return right; // Tam sonuç yoksa aşağ
+    }
+}
